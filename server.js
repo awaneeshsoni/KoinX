@@ -15,7 +15,14 @@ connectDB();
 app.use('/api', apiRoutes);
 
 app.get('/',(req,res) =>{
-    res.json({"message" : "its working"})
+    res.json({"message" : "its Home Page go to '/api' "})
+}
+)
+app.get('/api',(req,res) =>{
+    res.json({"message" : "its working ","url1": "/api/stats", "url2" : "/api/deviation"},
+        
+
+    )
 }
 )
 // Start background job (run every 2 hours)
