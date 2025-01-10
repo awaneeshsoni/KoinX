@@ -14,6 +14,10 @@ connectDB();
 // Set up routes
 app.use('/api', apiRoutes);
 
+app.get('/',(req,res) =>{
+    res.json({"message" : "its working"})
+}
+)
 // Start background job (run every 2 hours)
 fetchCryptoData();
 setInterval(fetchCryptoData, 2 * 60 * 60 * 1000);
