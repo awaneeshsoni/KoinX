@@ -10,7 +10,7 @@ router.get('/stats', async (req, res) => {
         const { coin } = req.body;
 
         if (!coin) {
-            return res.status(400).json({ error: 'Coin parameter is required.' });
+            return res.status(400).json({ error: 'coin parameter is required.' });
         }
 
         const crypto = await Crypto.findOne({ name: coin }).sort({ updatedAt: -1 });
@@ -36,7 +36,7 @@ router.get('/deviation', async (req, res) => {
         const { coin } = req.body;
 
         if (!coin) {
-            return res.status(400).json({ error: 'Coin parameter is required.' });
+            return res.status(400).json({ error: 'coin parameter is required.' });
         }
 
         const records = await Crypto.find({ name: coin }).sort({ updatedAt: -1 }).limit(100);
